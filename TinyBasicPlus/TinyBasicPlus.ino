@@ -112,7 +112,7 @@
 //      DWRITE <pin>, HIGH|HI|1|LOW|LO|0
 //      AWRITE <pin>, [0..255]
 //      fixed "save" appending to existing files instead of overwriting
-// 	Updated for building desktop command line app (incomplete)
+//      Updated for building desktop command line app (incomplete)
 //
 // v0.03: 2012-09-19
 //	Integrated Jurg Wullschleger whitespace,unary fix
@@ -120,19 +120,19 @@
 //	Project renamed from "Tiny Basic in C" to "TinyBasic Plus"
 //	   
 // v0.02b: 2012-09-17  Scott Lawrence <yorgle@gmail.com>
-// 	Better FILES listings
+//      Better FILES listings
 //
 // v0.02a: 2012-09-17  Scott Lawrence <yorgle@gmail.com>
-// 	Support for SD Library
-// 	Added: SAVE, FILES (mostly works), LOAD (mostly works) (redirects IO)
-// 	Added: MEM, ? (PRINT)
-// 	Quirk:  "10 LET A=B+C" is ok "10 LET A = B + C" is not.
-// 	Quirk:  INPUT seems broken?
+//      Support for SD Library
+//      Added: SAVE, FILES (mostly works), LOAD (mostly works) (redirects IO)
+//      Added: MEM, ? (PRINT)
+//      Quirk:  "10 LET A=B+C" is ok "10 LET A = B + C" is not.
+//      Quirk:  INPUT seems broken?
 
 // IF testing with Visual C, this needs to be the first thing in the file.
 //#include "stdafx.h"
 
-char eliminateCompileErrors = 1;  // fix to suppress arduino build errors
+char eliminateCompileErrors = 1; // fix to suppress arduino build errors
 
 // hack to let makefiles work with this file unchanged
 #ifdef FORCE_DESKTOP 
@@ -506,7 +506,7 @@ const static unsigned char relop_tab[] PROGMEM = {
 #define RELOP_NE_BANG 6
 #define RELOP_UNKNOWN 7
 
-const static unsigned char highlow_tab[] PROGMEM = { 
+const static unsigned char highlow_tab[] PROGMEM = {
   'H','I','G','H'+0x80,
   'H','I'+0x80,
   'L','O','W'+0x80,
@@ -1054,7 +1054,7 @@ void loop()
 
   program_start = program;
   program_end = program_start;
-  sp = program+sizeof(program);  // Needed for printnum
+  sp = program+sizeof(program); // Needed for printnum
 #ifdef ALIGN_MEMORY
   // Ensure these memory blocks start on even pages
   stack_limit = ALIGN_DOWN(program+sizeof(program)-STACK_SIZE);
@@ -1171,7 +1171,7 @@ prompt:
       from++;
       dest++;
       tomove--;
-    }	
+    }
     program_end = dest;
   }
 
@@ -1182,7 +1182,7 @@ prompt:
 
   // Make room for the new line, either all in one hit or lots of little shuffles
   while(linelen > 0)
-  {	
+  {
     unsigned int tomove;
     unsigned char *from,*dest;
     unsigned int space_to_make;
@@ -1240,7 +1240,7 @@ qwhat:
   line_terminator();
   goto prompt;
 
-qsorry:	
+qsorry:
   printmsg(sorrymsg);
   goto warmstart;
 
@@ -1744,7 +1744,7 @@ print:
 
     // At this point we have three options, a comma or a new line
     if(*txtpos == ',')
-      txtpos++;	// Skip the comma and move onto the next
+      txtpos++; // Skip the comma and move onto the next
     else if(txtpos[0] == ';' && (txtpos[1] == NL || txtpos[1] == ':'))
     {
       txtpos++; // This has to be the end of the print - no newline
@@ -1752,7 +1752,7 @@ print:
     }
     else if(*txtpos == NL || *txtpos == ':')
     {
-      line_terminator();	// The end of the print statement
+      line_terminator(); // The end of the print statement
       break;
     }
     else
