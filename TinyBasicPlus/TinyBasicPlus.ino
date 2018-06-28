@@ -497,14 +497,14 @@ const static unsigned char relop_tab[] PROGMEM = {
   0
 };
 
-#define RELOP_GE		0
-#define RELOP_NE		1
-#define RELOP_GT		2
-#define RELOP_EQ		3
-#define RELOP_LE		4
-#define RELOP_LT		5
-#define RELOP_NE_BANG		6
-#define RELOP_UNKNOWN	7
+#define RELOP_GE      0
+#define RELOP_NE      1
+#define RELOP_GT      2
+#define RELOP_EQ      3
+#define RELOP_LE      4
+#define RELOP_LT      5
+#define RELOP_NE_BANG 6
+#define RELOP_UNKNOWN 7
 
 const static unsigned char highlow_tab[] PROGMEM = { 
   'H','I','G','H'+0x80,
@@ -1222,11 +1222,11 @@ unimplemented:
   printmsg(unimplimentedmsg);
   goto prompt;
 
-qhow:	
+qhow:
   printmsg(howmsg);
   goto prompt;
 
-qwhat:	
+qwhat:
   printmsgNoNL(whatmsg);
   if(current_line != NULL)
   {
@@ -1328,7 +1328,7 @@ interperateAtTxtpos:
     goto gosub_return; 
   case KW_REM:
   case KW_QUOTE:
-    goto execnextline;	// Ignore line completely
+    goto execnextline; // Ignore line completely
   case KW_FOR:
     goto forloop; 
   case KW_INPUT:
@@ -1349,10 +1349,10 @@ interperateAtTxtpos:
     // Leave the basic interperater
     return;
 
-  case KW_AWRITE:  // AWRITE <pin>, HIGH|LOW
+  case KW_AWRITE: // AWRITE <pin>, HIGH|LOW
     isDigital = false;
     goto awrite;
-  case KW_DWRITE:  // DWRITE <pin>, HIGH|LOW
+  case KW_DWRITE: // DWRITE <pin>, HIGH|LOW
     isDigital = true;
     goto dwrite;
 
@@ -1390,7 +1390,7 @@ interperateAtTxtpos:
   }
 
 execnextline:
-  if(current_line == NULL)		// Processing direct commands?
+  if(current_line == NULL) // Processing direct commands?
     goto prompt;
   current_line +=	 current_line[sizeof(LINENUM)];
 
@@ -1598,8 +1598,8 @@ gosub_return:
       if(table_index == KW_RETURN)
       {
         struct stack_gosub_frame *f = (struct stack_gosub_frame *)tempsp;
-        current_line	= f->current_line;
-        txtpos			= f->txtpos;
+        current_line = f->current_line;
+        txtpos = f->txtpos;
         sp += sizeof(struct stack_gosub_frame);
         goto run_next_statement;
       }
