@@ -51,7 +51,7 @@
 //    done wrt licensing further.  This entire header will likely
 //    change with the next version 0.16, which will hopefully nail
 //    down the whole thing so we can get back to implementing
-//    features instead of licenses.  Thank you for your time.
+//    features instead of licenses. Thank you for your time.
 
 #define kVersion "v0.15"
 
@@ -107,7 +107,7 @@
 //      Added "END" for "STOP" synonym (proper name for the functionality anyway)
 //
 // v0.04: 2012-09-20
-//      DELAY ms   - for delaying
+//      DELAY ms - for delaying
 //      PINMODE <pin>, INPUT|IN|I|OUTPUT|OUT|O
 //      DWRITE <pin>, HIGH|HI|1|LOW|LO|0
 //      AWRITE <pin>, [0..255]
@@ -126,8 +126,8 @@
 //      Support for SD Library
 //      Added: SAVE, FILES (mostly works), LOAD (mostly works) (redirects IO)
 //      Added: MEM, ? (PRINT)
-//      Quirk:  "10 LET A=B+C" is ok "10 LET A = B + C" is not.
-//      Quirk:  INPUT seems broken?
+//      Quirk: "10 LET A=B+C" is ok "10 LET A = B + C" is not.
+//      Quirk: INPUT seems broken?
 
 // IF testing with Visual C, this needs to be the first thing in the file.
 //#include "stdafx.h"
