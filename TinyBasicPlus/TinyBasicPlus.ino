@@ -396,10 +396,12 @@ const static unsigned char keywords[] PROGMEM = {
   'E','N','D'+0x80,
   'R','S','E','E','D'+0x80,
   'C','H','A','I','N'+0x80,
+#ifdef ARDUINO
 #ifdef ENABLE_TONES
   'T','O','N','E','W'+0x80,
   'T','O','N','E'+0x80,
   'N','O','T','O','N','E'+0x80,
+#endif
 #endif
 #ifdef ARDUINO
 #ifdef ENABLE_EEPROM
